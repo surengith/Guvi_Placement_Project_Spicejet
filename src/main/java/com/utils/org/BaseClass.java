@@ -126,7 +126,7 @@ public class BaseClass {
 
 	public static void screenShot(String location) throws IOException {
 		Date d = new Date();
-		String fileName = d.toString().replace(":", "-").replace(" ", "-") + ".png";
+		String fileName = d.toString().replace(":", "-").replace(" ", "-");
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File destination = new File("screenshots" + "\\" + location + fileName + ".png");
