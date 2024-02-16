@@ -7,15 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.utils.org.BaseClass;
 
-public class FlightOneWayBooking extends BaseClass {
+public class PaymentAndCheckoutprocess extends BaseClass {
 
 	public static WebDriver driver;
 
-	public FlightOneWayBooking(WebDriver driver) {
+	public PaymentAndCheckoutprocess(WebDriver driver) {
+
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
+	
 	@FindBy(xpath = "//div[text()='one way']")
 	private WebElement onewayButton;
 
@@ -26,7 +27,7 @@ public class FlightOneWayBooking extends BaseClass {
 	private WebElement toDestination;
 
 	@FindBy(xpath = "(//div[@class='css-76zvg2 r-homxoj r-ubezar r-16dba41'][normalize-space()='29'])[1]")
-	private WebElement oneWayTripDepartureDatePicker;
+	private WebElement oneWayTripDepartureDatePickerForPayment;
 
 	@FindBy(xpath = "//div[text()='Passengers']")
 	private WebElement passengers;
@@ -62,7 +63,7 @@ public class FlightOneWayBooking extends BaseClass {
 	private WebElement contactDetailsTown;
 	
 	@FindBy(xpath = "//div[contains(text(),'Retain my details for the next visit.')]")
-	private WebElement retainMyDetails;
+	private WebElement retainMyDetailsPayment;
 
 	@FindBy(xpath = "(//div[text()='Mr'])[2]")
 	private WebElement selectSalutationPassengerOne;
@@ -99,10 +100,34 @@ public class FlightOneWayBooking extends BaseClass {
 
 	@FindBy(xpath = "//div[@data-testid='traveller-info-continue-cta']")
 	private WebElement paymentContinueButton;
+	
+	@FindBy(xpath = "(//div[@data-testid='add-ons-continue-footer-button'])[3]")
+	private WebElement paymentContinueButtonPayment;
+	
+	@FindBy(xpath = "//span[text()='Skip this to skip comfort.']")
+	private WebElement skipAndContinue;
 
-	@FindBy(xpath = "//img[@src='https://www.spicejet.com/public/v1.svg']")
-	private WebElement homePage;
+	@FindBy(xpath = "//input[@type='tel']")
+	private WebElement cardNumber;
 
+	@FindBy(xpath = "//input[@class='name_on_card']")
+	private WebElement cardHolderName;
+
+	@FindBy(xpath = "//input[@class='card_exp_month']")
+	private WebElement cardExpMonth;
+
+	@FindBy(xpath = "//input[@class='card_exp_year']")
+	private WebElement cardExpYear;
+
+	@FindBy(xpath = "//input[@class='security_code']")
+	private WebElement cardExpSecurity;
+
+	@FindBy(xpath = "//*[name()='rect' and contains(@width,'100%')]")
+	private WebElement paymentCheckBox;
+
+	@FindBy(xpath = "//div[@data-testid='common-proceed-to-pay']")
+	private WebElement proceedToPay;
+	
 	public WebElement getOnewayButton() {
 		return onewayButton;
 	}
@@ -127,12 +152,12 @@ public class FlightOneWayBooking extends BaseClass {
 		this.toDestination = toDestination;
 	}
 
-	public WebElement getOneWayTripDepartureDatePicker() {
-		return oneWayTripDepartureDatePicker;
+	public WebElement oneWayTripDepartureDatePickerForPayment() {
+		return oneWayTripDepartureDatePickerForPayment;
 	}
 
-	public void setOneWayTripDepartureDatePicker(WebElement oneWayTripDepartureDatePicker) {
-		this.oneWayTripDepartureDatePicker = oneWayTripDepartureDatePicker;
+	public void oneWayTripDepartureDatePickerForPayment(WebElement oneWayTripDepartureDatePickerForPayment) {
+		this.oneWayTripDepartureDatePickerForPayment = oneWayTripDepartureDatePickerForPayment;
 	}
 
 	public WebElement getPassengers() {
@@ -222,13 +247,13 @@ public class FlightOneWayBooking extends BaseClass {
 	public void setContactDetailsTown(WebElement contactDetailsTown) {
 		this.contactDetailsTown = contactDetailsTown;
 	}
-
-	public WebElement getRetainMyDetails() {
-		return retainMyDetails;
+	
+	public WebElement getRetainMyDetailsPayment() {
+		return retainMyDetailsPayment;
 	}
 
-	public void setRetainMyDetails(WebElement retainMyDetails) {
-		this.retainMyDetails = retainMyDetails;
+	public void setRetainMyDetailsPayment(WebElement retainMyDetailsPayment) {
+		this.retainMyDetailsPayment = retainMyDetailsPayment;
 	}
 
 	public WebElement getSelectSalutationPassengerOne() {
@@ -326,13 +351,78 @@ public class FlightOneWayBooking extends BaseClass {
 	public void setPaymentContinueButton(WebElement paymentContinueButton) {
 		this.paymentContinueButton = paymentContinueButton;
 	}
+	
 
-	public WebElement getHomePage() {
-		return homePage;
+	public WebElement getPaymentContinueButtonPayment() {
+		return paymentContinueButtonPayment;
 	}
 
-	public void setHomePage(WebElement homePage) {
-		this.homePage = homePage;
+	public void setPaymentContinueButtonPayment(WebElement paymentContinueButtonPayment) {
+		this.paymentContinueButtonPayment = paymentContinueButtonPayment;
+	}
+
+	public WebElement getSkipAndContinue() {
+		return skipAndContinue;
+	}
+
+	public void setSkipAndContinue(WebElement skipAndContinue) {
+		this.skipAndContinue = skipAndContinue;
+	}
+
+	public WebElement getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(WebElement cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public WebElement getCardHolderName() {
+		return cardHolderName;
+	}
+
+	public void setCardHolderName(WebElement cardHolderName) {
+		this.cardHolderName = cardHolderName;
+	}
+
+	public WebElement getCardExpMonth() {
+		return cardExpMonth;
+	}
+
+	public void setCardExpMonth(WebElement cardExpMonth) {
+		this.cardExpMonth = cardExpMonth;
+	}
+
+	public WebElement getCardExpYear() {
+		return cardExpYear;
+	}
+
+	public void setCardExpYear(WebElement cardExpYear) {
+		this.cardExpYear = cardExpYear;
+	}
+
+	public WebElement getCardExpSecurity() {
+		return cardExpSecurity;
+	}
+
+	public void setCardExpSecurity(WebElement cardExpSecurity) {
+		this.cardExpSecurity = cardExpSecurity;
+	}
+
+	public WebElement getPaymentCheckBox() {
+		return paymentCheckBox;
+	}
+
+	public void setPaymentCheckBox(WebElement paymentCheckBox) {
+		this.paymentCheckBox = paymentCheckBox;
+	}
+
+	public WebElement getProceedToPay() {
+		return proceedToPay;
+	}
+
+	public void setProceedToPay(WebElement proceedToPay) {
+		this.proceedToPay = proceedToPay;
 	}
 
 }

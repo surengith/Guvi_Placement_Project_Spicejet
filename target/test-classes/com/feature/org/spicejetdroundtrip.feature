@@ -31,4 +31,4 @@ Then user should get a Trip Summary message on webpage and click the homepage bu
 Examples:
 
 |FirstName|LastName|PhoneNumber|Email|Town|PassengerOneFirstName|PassengerOneLastName|PassengerOnePhoneNumber|PassengerTwoFirstName|PassengerTwoLastName|PassengerTwoPhoneNumber|
-|Surendhar|P|9443352021|surendhar01@gmail.com|Coimbatore|Surendhar|P|9443352021|Suren|P|9443352021|
+|Surendhar|P|9443352021|surendhar@gmail.com|Coimbatore|Surendhar|P|9443352021|Suren|P|9443352021|

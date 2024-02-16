@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -21,10 +22,33 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeSuite;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class BaseClass {
 
 	public static WebDriver driver;
+	
+	public static ExtentHtmlReporter reporter;
+	public static ExtentReports extent;
+	public static ExtentTest test;
+	
+	@BeforeSuite
+	public void extentReport() {
+		reporter = new ExtentHtmlReporter(
+				"C:\\Users\\Surendhar\\eclipse-workspace\\BestBuy-E-Commerce-Project\\extentreport\\TestReport.html");
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+	}
+	
+	@AfterMethod
+	public void extentFlush() {
+		extent.flush();
+	}
 
 	public static WebDriver launchBrowser(String browser) {
 
@@ -108,6 +132,11 @@ public class BaseClass {
 			System.out.println(sysoMessageTwo);
 		}
 	}
+	
+	public static void clear(WebElement element) {
+		element.clear();
+	}
+
 
 	public static void implicitlyWait(int value) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(value));

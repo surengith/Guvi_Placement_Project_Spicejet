@@ -2,6 +2,8 @@ package com.stepdefinition.org;
 
 import java.io.IOException;
 
+import org.openqa.selenium.support.ui.Sleeper;
+
 import com.Pages.org.FlightRoundTripBooking;
 import com.utils.org.BaseClass;
 import com.utils.org.ConfigProperty;
@@ -75,44 +77,47 @@ public class RoundwayStep extends BaseClass {
 
 	@And("user click the continue button roundtrip")
 	public void user_click_the_continue_button_roundtrip() {
-		explicitlyWaitClick(9, frb.getContinueButtonRound());
+		explicitlyWaitClick(10, frb.getContinueButtonRound());
 		clickOnElement(frb.getContinueButtonRound());
 	}
 
 	@And("user select the valid salutation in the salutation field roundtrip")
 	public void user_select_the_valid_salutation_in_the_salutation_field_roundtrip() {
-		explicitlyWaitClick(8, frb.getSelectSalutationBookingRound());
+		explicitlyWaitClick(10, frb.getSelectSalutationBookingRound());
 		clickOnElement(frb.getSelectSalutationBookingRound());
 		clickOnElement(frb.getSelectSalutationBookingDropRound());
 	}
 
 	@And("user enter the valid {string} in the firstname field roundtrip")
 	public void user_enter_the_valid_in_the_firstname_field_roundtrip(String string) {
-		passInputValue(frb.getContactDetailsFirstNameRound(), "Surendhar");
+		passInputValue(frb.getContactDetailsFirstNameRound(), string);
 
 	}
 
 	@And("user enter the valid {string} in the lastname field roundtrip")
 	public void user_enter_the_valid_in_the_lastname_field_roundtrip(String string) {
-		passInputValue(frb.getContactDetailsLastNameRound(), "P");
+		passInputValue(frb.getContactDetailsLastNameRound(), string);
 
 	}
 
 	@And("user enter the valid {string} in the phonenumberfield roundtrip")
 	public void user_enter_the_valid_in_the_phonenumberfield_roundtrip(String string) {
-		passInputValue(frb.getContactDetailsPhoneNumberRound(), "9443352021");
+		passInputValue(frb.getContactDetailsPhoneNumberRound(), string);
 
 	}
 
 	@And("user enter the valid {string} in the Email field roundtrip")
-	public void user_enter_the_valid_in_the_email_field_roundtrip(String string) {
+	public void user_enter_the_valid_in_the_email_field_roundtrip(String string) throws InterruptedException {
 		clickOnElement(frb.getContactDetailsEmailRound());
-		passInputValue(frb.getContactDetailsEmailRound(), "surendhar01@gmail.com");
+		passInputValue(frb.getContactDetailsEmailRound(),string);
+		
 	}
 
 	@And("user enter the valid {string} in the Town field roundtrip")
 	public void user_enter_the_valid_in_the_town_field_roundtrip(String string) {
-		passInputValue(frb.getContactDetailsTownRound(), "Coimbatore");
+		passInputValue(frb.getContactDetailsTownRound(), string);
+		explictlyWait(10, frb.getRetainMyDeatilsRound());
+		clickOnElement(frb.getRetainMyDeatilsRound());
 
 	}
 
@@ -124,19 +129,19 @@ public class RoundwayStep extends BaseClass {
 
 	@And("user enter the valid {string} in the passenger one firstname field roundtrip")
 	public void user_enter_the_valid_in_the_passenger_one_firstname_field_roundtrip(String string) {
-		passInputValue(frb.getPassengerOneFirstNameOneRound(), "Surendhar");
+		passInputValue(frb.getPassengerOneFirstNameOneRound(), string);
 
 	}
 
 	@And("user enter the valid {string} in the passenger one Lastname field roundtrip")
 	public void user_enter_the_valid_in_the_passenger_one_lastname_field_roundtrip(String string) {
-		passInputValue(frb.getPassengerOneLastNameOneRound(), "P");
+		passInputValue(frb.getPassengerOneLastNameOneRound(), string);
 
 	}
 
 	@And("user enter the valid {string} in the passenger one PhoneNunber field roundtrip")
 	public void user_enter_the_valid_in_the_passenger_one_phone_nunber_field_roundtrip(String string) {
-		passInputValue(frb.getPassengerOnePhoneNumberOneRound(), "9443352021");
+		passInputValue(frb.getPassengerOnePhoneNumberOneRound(), string);
 
 	}
 
@@ -150,19 +155,19 @@ public class RoundwayStep extends BaseClass {
 
 	@And("user enter the valid {string} in the passenger two firstname field roundtrip")
 	public void user_enter_the_valid_in_the_passenger_two_firstname_field_roundtrip(String string) {
-		passInputValue(frb.getPassengerOneFirstNameTwoRound(), "Suren");
+		passInputValue(frb.getPassengerOneFirstNameTwoRound(), string);
 
 	}
 
 	@And("user enter the valid {string} in the passenger two Lastname field roundtrip")
 	public void user_enter_the_valid_in_the_passenger_two_lastname_field_roundtrip(String string) {
-		passInputValue(frb.getPassengerOneLastNameTwoRound(), "P");
+		passInputValue(frb.getPassengerOneLastNameTwoRound(), string);
 
 	}
 
 	@And("user enter the valid {string} in the passenger two PhoneNunber field roundtrip")
 	public void user_enter_the_valid_in_the_passenger_two_phone_nunber_field_roundtrip(String string) {
-		passInputValue(frb.getPassengerOnePhoneNumberTwoRound(), "9443352021");
+		passInputValue(frb.getPassengerOnePhoneNumberTwoRound(), string);
 
 	}
 

@@ -13,9 +13,10 @@ import io.cucumber.junit.CucumberOptions;
 		"src\\test\\java\\com\\feature\\org\\spicejetblogin.feature",
 		"src\\test\\java\\com\\feature\\org\\spicejetconewaytrip.feature",
 		"src\\test\\java\\com\\feature\\org\\spicejetdroundtrip.feature",
-		"src\\test\\java\\com\\feature\\org\\spicejetevalidation.feature" },
+		"src\\test\\java\\com\\feature\\org\\spicejetevalidation.feature",
+		"src\\test\\java\\com\\feature\\org\\spicejetfpaymentprocess.feature"},
 glue = {"com.stepdefinition.org" },
-//dryRun = true,
+dryRun = false,
 monochrome = true,
 plugin = {"pretty", "json:cucumberreports\\CucumberReport.json",
 						"html:cucumberreports\\CucumberReport.html" }

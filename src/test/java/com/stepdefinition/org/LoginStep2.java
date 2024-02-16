@@ -177,9 +177,8 @@ public class LoginStep2 extends BaseClass {
 		pageSource("Please enter a valid email address", "Login page has been verified successfull",
 				"Login page not verified");
 		explicitlyWaitClick(10, lp.getLoginPageCloseButton());
-		sleep(5000);
 		clickOnElement(lp.getLoginPageCloseButton());
-		sleep(3000);
+		sleep(5000);
 	}
 
 }

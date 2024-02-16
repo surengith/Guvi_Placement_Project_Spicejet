@@ -63,6 +63,9 @@ public class FlightRoundTripBooking extends BaseClass {
 
 	@FindBy(xpath = "(//input[@type='text'])[5]")
 	private WebElement contactDetailsTownRound;
+	
+	@FindBy(xpath = "//div[contains(text(),'Retain my details for the next visit.')]")
+	private WebElement retainMyDeatilsRound;
 
 	@FindBy(xpath = "(//div[text()='Mr'])[2]")
 	private WebElement selectSalutationPassengerOneRound;
@@ -230,6 +233,14 @@ public class FlightRoundTripBooking extends BaseClass {
 
 	public void setContactDetailsTownRound(WebElement contactDetailsTownRound) {
 		this.contactDetailsTownRound = contactDetailsTownRound;
+	}
+	
+	public WebElement getRetainMyDeatilsRound() {
+		return retainMyDeatilsRound;
+	}
+
+	public void setRetainMyDeatilsRound(WebElement retainMyDeatilsRound) {
+		this.retainMyDeatilsRound = retainMyDeatilsRound;
 	}
 
 	public WebElement getSelectSalutationPassengerOneRound() {

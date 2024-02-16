@@ -35,21 +35,21 @@ public class OnewayStep extends BaseClass {
 
 	@And("user select the origin place from the from field for oneway")
 	public void user_select_the_origin_place_from_the_from_field_for_oneway() {
-		explicitlyWaitClick(2, fob.getFromOriginClick());
+		explicitlyWaitClick(10, fob.getFromOriginClick());
 		clickOnElement(fob.getFromOriginClick());
 		passInputValue(fob.getFromOriginClick(), "DEL");
 	}
 
 	@And("user select the Destination place from the Destination field for oneway")
 	public void user_select_the_destination_place_from_the_destination_field_for_oneway() {
-		explicitlyWaitClick(2, fob.getToDestination());
+		explicitlyWaitClick(10, fob.getToDestination());
 		clickOnElement(fob.getToDestination());
 		passInputValue(fob.getToDestination(), "MAA");
 	}
 
 	@And("user select the departure date on the date field for oneway")
 	public void user_select_the_departure_date_on_the_date_field_for_oneway() {
-		explicitlyWaitClick(2, fob.getOneWayTripDepartureDatePicker());
+		explicitlyWaitClick(10, fob.getOneWayTripDepartureDatePicker());
 		clickOnElement(fob.getOneWayTripDepartureDatePicker());
 	}
 
@@ -57,7 +57,7 @@ public class OnewayStep extends BaseClass {
 	public void user_click_the_passenger_and_add_the_passenger_for_oneway() {
 		explictlyWait(2, fob.getPassengers());
 		clickOnElement(fob.getPassengers());
-		explicitlyWaitClick(2, fob.getAdult());
+		explicitlyWaitClick(10, fob.getAdult());
 		clickOnElement(fob.getAdult());
 	}
 
@@ -73,7 +73,7 @@ public class OnewayStep extends BaseClass {
 
 	@And("user select the valid salutation in the salutation field for oneway")
 	public void user_select_the_valid_salutation_in_the_salutation_field_for_oneway() {
-		explicitlyWaitClick(8, fob.getSelectSalutationBooking());
+		explicitlyWaitClick(10, fob.getSelectSalutationBooking());
 		clickOnElement(fob.getSelectSalutationBooking());
 		clickOnElement(fob.getSelectSalutationBookingDrop());
 	}
@@ -105,6 +105,8 @@ public class OnewayStep extends BaseClass {
 	@And("user enter the valid {string} in the Town field for oneway")
 	public void user_enter_the_valid_in_the_town_field_for_oneway(String string) {
 		passInputValue(fob.getContactDetailsTown(), string);
+		explictlyWait(10, fob.getRetainMyDetails());
+		clickOnElement(fob.getRetainMyDetails());
 	}
 
 	@And("user select the valid passenger one salutation in the salutation field for oneway")

@@ -1,12 +1,10 @@
 package com.stepdefinition.org;
 
 import java.io.IOException;
-import org.testng.internal.junit.ArrayAsserts;
 import com.Pages.org.Signup;
 import com.utils.org.BaseClass;
 import com.utils.org.ConfigProperty;
 import com.utils.org.FileReaderManager;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -15,7 +13,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.Assert;
 
 public class SignupStep1 extends BaseClass {
 
@@ -41,7 +38,6 @@ public class SignupStep1 extends BaseClass {
 		}
 	}
 	
-	
 
 	@Given("user must launch the url")
 	public static void user_must_launch_the_url() throws IOException {
@@ -52,7 +48,7 @@ public class SignupStep1 extends BaseClass {
 
 	@When("user click the signup button for valid")
 	public void user_click_the_signup_button_for_valid() {
-		explictlyWait(5, sip.getSignupButton());
+		explictlyWait(10, sip.getSignupButton());
 		clickOnElement(sip.getSignupButton());
 	}
 
@@ -89,7 +85,7 @@ public class SignupStep1 extends BaseClass {
 		clickOnElement(sip.getDobDate());
 		scrollDownorUp("window.scrollBy(0,500)");
 		sleep(1000);
-		explictlyWait(5, sip.getSignupPhoneNumber());
+		explictlyWait(10, sip.getSignupPhoneNumber());
 	}
 
 	@And("user enter the valid {string} in the phone number field")
@@ -144,7 +140,7 @@ public class SignupStep1 extends BaseClass {
 
 	@When("user click the signup button for invalid")
 	public void user_click_the_signup_button_for_invalid() {
-		explictlyWait(5, sip.getSignupButton());
+		explictlyWait(10, sip.getSignupButton());
 		clickOnElement(sip.getSignupButton());
 	}
 
@@ -181,7 +177,7 @@ public class SignupStep1 extends BaseClass {
 		clickOnElement(sip.getDobDate());
 		scrollDownorUp("window.scrollBy(0,500)");
 		sleep(1000);
-		explictlyWait(5, sip.getSignupPhoneNumber());
+		explictlyWait(10, sip.getSignupPhoneNumber());
 	}
 
 	@And("user enter the {string} in the phone number field")
@@ -236,7 +232,7 @@ public class SignupStep1 extends BaseClass {
 
 	@When("user click the signup button for empty")
 	public void user_click_the_signup_button_for_empty() {
-		explictlyWait(5, sip.getSignupButton());
+		explictlyWait(10, sip.getSignupButton());
 		clickOnElement(sip.getSignupButton());
 	}
 
